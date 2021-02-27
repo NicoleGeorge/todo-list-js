@@ -50,6 +50,13 @@ function deleteItem(e) {
 
 // filter items function
 function filterItems(e) {
+  // convert text to lowercase
   const text = e.target.value.toLowerCase();
-  console.log(text);
+  //   get all li elements
+  const items = itemList.getElementsByTagName('li');
+  // convert the li collection into an array
+  Array.from(items).forEach(function (item) {
+    const itemName = item.firstChild.textContent;
+    console.log(itemName)
+  });
 }
