@@ -5,6 +5,9 @@ const itemList = document.getElementById('items');
 
 form.addEventListener('submit', addItem);
 
+// Add item
 function addItem(e) {
-  e.preventDefault();
+    e.preventDefault();
+
+  console.log(1);
 }
