@@ -39,6 +39,9 @@ function addItem(e) {
 
 function deleteItem(e) {
   if (e.target.classList.contains('delete')) {
-    console.log(1);
+    if(confirm('Are you sure you have completed this task...')){
+        let li = e.target.parentElement;
+        itemList.removeChild(li);
+    }
   }
 }
