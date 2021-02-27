@@ -4,6 +4,8 @@ const itemList = document.getElementById('items');
 // Form Submit EVENT
 
 form.addEventListener('submit', addItem);
+// Delete EVENT
+itemList.addEventListener('click', deleteItem);
 
 // Add item
 function addItem(e) {
@@ -31,4 +33,12 @@ function addItem(e) {
   //   Add the button to the li element
   newListItem.appendChild(deleteBtn);
   itemList.appendChild(newListItem);
+}
+
+// DELETE item function
+
+function deleteItem(e) {
+  if (e.target.classList.contains('delete')) {
+    console.log(1);
+  }
 }
