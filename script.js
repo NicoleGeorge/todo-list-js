@@ -57,6 +57,11 @@ function filterItems(e) {
   // convert the li collection into an array
   Array.from(items).forEach(function (item) {
     const itemName = item.firstChild.textContent;
-    console.log(itemName)
+    // compare item name with search box text
+    if (itemName.toLocaleLowerCase().indexOf(text) != -1) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
   });
 }
