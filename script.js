@@ -1,11 +1,13 @@
 const form = document.getElementById('addForm');
 const itemList = document.getElementById('items');
+const filter = document.getElementById('filter');
 
-// Form Submit EVENT
-
+// Form Submit items with a 'submit; EVENT
 form.addEventListener('submit', addItem);
-// Delete EVENT
+// Delete items with a 'click' EVENT
 itemList.addEventListener('click', deleteItem);
+// Filter with a 'keyup' EVENT
+filter.addEventListener('keyup', filterItems);
 
 // Add item
 function addItem(e) {
@@ -39,9 +41,15 @@ function addItem(e) {
 
 function deleteItem(e) {
   if (e.target.classList.contains('delete')) {
-    if(confirm('Are you sure you have completed this task...')){
-        let li = e.target.parentElement;
-        itemList.removeChild(li);
+    if (confirm('Are you sure you have completed this task...')) {
+      let li = e.target.parentElement;
+      itemList.removeChild(li);
     }
   }
+}
+
+// filter items function
+function filterItems(e) {
+  const text = e.target.value.toLowerCase();
+  console.log(text);
 }
