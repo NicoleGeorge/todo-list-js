@@ -15,7 +15,12 @@ function addItem(e) {
   //   Create new <li> element to capture a new list input
   const newListItem = document.createElement('li');
   // add class to the new element
-  newListItem.className = 'list-group-items';
+  newListItem.className = 'list-group-item';
+  // console.log(newListItem);
 
-  console.log(newListItem);
+  //   Add new list item value to the list
+  newListItem.appendChild(document.createTextNode(newItem.value));
+
+  itemList.appendChild(newListItem);
+  
 }
